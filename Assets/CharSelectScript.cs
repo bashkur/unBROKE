@@ -52,6 +52,25 @@ public class CharSelectScript : MonoBehaviour
 
             // Toggle on cur model
             characterList[index].SetActive(true);
+
+            // Set PlayerPrefs Int, and int that can save across scenes and plays
+            PlayerPrefs.SetInt("P" + player + "CharacterSelected", index);
+
+            // Players can't be same character
+            if (player == 1)
+            {
+                if(index == PlayerPrefs.GetInt("P" + (player+1) + "CharacterSelected"))
+                {
+                    this.ToggleLeft();
+                }
+            }
+            else
+            {
+                if (index == PlayerPrefs.GetInt("P" + (player - 1) + "CharacterSelected"))
+                {
+                    this.ToggleLeft();
+                }
+            }
         }
     }
 
@@ -71,6 +90,25 @@ public class CharSelectScript : MonoBehaviour
 
             // Toggle on cur model
             characterList[index].SetActive(true);
+
+            // Set PlayerPrefs Int, and int that can save across scenes and plays
+            PlayerPrefs.SetInt("P" + player + "CharacterSelected", index);
+
+            // Players can't be same character
+            if (player == 1)
+            {
+                if (index == PlayerPrefs.GetInt("P" + (player + 1) + "CharacterSelected"))
+                {
+                    this.ToggleRight();
+                }
+            }
+            else
+            {
+                if (index == PlayerPrefs.GetInt("P" + (player - 1) + "CharacterSelected"))
+                {
+                    this.ToggleRight();
+                }
+            }
         }
     }
 

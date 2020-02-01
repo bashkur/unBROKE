@@ -27,6 +27,7 @@ public class SceneLoaderScript : MonoBehaviour
 
     private void bothReady()
     {
-
+        // Load Playing Scene
+        SceneManager.LoadScene(1);
     }
 }
