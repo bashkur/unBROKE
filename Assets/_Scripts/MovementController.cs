@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
+    BreakableObjectScript broken;
     [SerializeField]
     private float move_speed = 3.0f;
     [SerializeField]
     private Vector3 jumpForce;
-
+   
     private bool isGrounded;
 
     //private CharacterController controller = null;
@@ -18,6 +19,7 @@ public class MovementController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         isGrounded = true;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
@@ -31,6 +33,7 @@ public class MovementController : MonoBehaviour
             rb.AddForce(jumpForce);
             isGrounded = false;
         }
+
     }
 
     private void FixedUpdate()
@@ -44,11 +47,39 @@ public class MovementController : MonoBehaviour
             animator.SetBool("Running", false);
         else
             animator.SetBool("Running", true);
+        if(broken!=null)
+        {
+            if (broken.isDestroyed() == true)
+
+            {
+
+                if (Input.GetKeyDown("e"))
+                {
+                    broken.heal();
+                    print(broken.GetHealth());
+                }
+
+            }
+            
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Floor")
             isGrounded = true;
+        //gets game object scripts sees if it is destroyed then can heal!
+ 
+        if(collision.gameObject.tag=="Breakable")
+        {  
+            broken =collision.gameObject.GetComponent<BreakableObjectScript>();
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.tag=="Breakable")
+        {
+            broken = null;
+        }
     }
 }
