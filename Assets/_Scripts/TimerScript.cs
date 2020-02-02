@@ -43,12 +43,14 @@ public class TimerScript : MonoBehaviour
                 if(this.gameObject.GetComponent<autoBreak>().isMoreBroke())
                 {
                     print("YOU LOST");
-                    //hud.transform.GetChild(2).GetComponent<Text>().text = "YOU LOST";
+                    //hud.transform.GetChild(2).GetComponent<Text>().text = "YOU LOST"
+                    PlayerPrefs.SetInt("DID I WIN?", 0);
                     SceneManager.LoadScene(0);
                 }
                 else
                 {
                     print("YOU WON");
+                    PlayerPrefs.SetInt("DID I WIN?", 1);
                     SceneManager.LoadScene(0);
                 }
             }
