@@ -173,8 +173,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4973754646183026056}
+  - component: {fileID: 9167903488306875116}
+  - component: {fileID: 1297664190815954243}
   m_Layer: 0
-  m_Name: basic_rig UpperArm
+  m_Name: basic_rig UpperArm RAG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,6 +197,35 @@ Transform:
   m_Father: {fileID: 4974147425148314666}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &9167903488306875116
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975080761999312636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.011, y: 0.005, z: 0.005}
+  m_Center: {x: -0.004, y: 0, z: 0}
+--- !u!54 &1297664190815954243
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975080761999312636}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4975146979644115282
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,8 +266,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4974076346623393018}
+  - component: {fileID: 5189872719358776150}
+  - component: {fileID: 7067283503884064188}
   m_Layer: 0
-  m_Name: basic_rig R Thigh
+  m_Name: basic_rig R Thigh RAG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,6 +290,35 @@ Transform:
   m_Father: {fileID: 4973667084955501928}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5189872719358776150
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975158881098277144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014, y: 0.005, z: 0.005}
+  m_Center: {x: -0.004, y: 0, z: 0}
+--- !u!54 &7067283503884064188
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975158881098277144}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4975191262664236506
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,8 +358,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4978836276561050694}
+  - component: {fileID: 140536558875729683}
+  - component: {fileID: 4421548403596140816}
   m_Layer: 0
-  m_Name: basic_rig R Forearm
+  m_Name: basic_rig R Forearm RAG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,6 +382,35 @@ Transform:
   m_Father: {fileID: 4973754646183026056}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &140536558875729683
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975357751787225428}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.011, y: 0.005, z: 0.005}
+  m_Center: {x: -0.004, y: 0, z: 0}
+--- !u!54 &4421548403596140816
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975357751787225428}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4975367672876869632
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,8 +543,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4979251923534615692}
+  - component: {fileID: 6760406469821720417}
+  - component: {fileID: 4818697734800899946}
   m_Layer: 0
-  m_Name: basic_rig R Hand
+  m_Name: basic_rig R Hand RAG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -474,6 +569,35 @@ Transform:
   m_Father: {fileID: 4978836276561050694}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6760406469821720417
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975423699217336502}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.011, y: 0.005, z: 0.005}
+  m_Center: {x: -0.004, y: 0, z: 0}
+--- !u!54 &4818697734800899946
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975423699217336502}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4975448852084448106
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,8 +638,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4973701870942522866}
+  - component: {fileID: 3531373046693549520}
+  - component: {fileID: 7333857003034651740}
   m_Layer: 0
-  m_Name: basic_rig L Calf
+  m_Name: basic_rig L Calf RAG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,6 +662,35 @@ Transform:
   m_Father: {fileID: 4978911328420958960}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3531373046693549520
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975490107880954332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016, y: 0.005, z: 0.005}
+  m_Center: {x: -0.006, y: 0, z: 0}
+--- !u!54 &7333857003034651740
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975490107880954332}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4975544355087972044
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,8 +700,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4979254814185091264}
+  - component: {fileID: 8835138218624327424}
+  - component: {fileID: 5975110061998715941}
   m_Layer: 0
-  m_Name: basic_rig Spine
+  m_Name: basic_rig Spine RAG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -567,6 +724,35 @@ Transform:
   m_Father: {fileID: 4973667084955501928}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8835138218624327424
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975544355087972044}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.013, y: 0.02, z: 0.02}
+  m_Center: {x: -0.004, y: 0, z: 0}
+--- !u!54 &5975110061998715941
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975544355087972044}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4975554075473612882
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,8 +824,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4978965833124949910}
+  - component: {fileID: 3542572196577010013}
+  - component: {fileID: 2799572717470737280}
   m_Layer: 0
-  m_Name: basic_rig L Hand
+  m_Name: basic_rig L Hand RAG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -662,6 +850,35 @@ Transform:
   m_Father: {fileID: 4979002918358536882}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3542572196577010013
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975573044178201134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.011, y: 0.005, z: 0.005}
+  m_Center: {x: -0.004, y: 0, z: 0}
+--- !u!54 &2799572717470737280
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975573044178201134}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4975630371633567418
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +948,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4973667084955501928}
+  - component: {fileID: 2935917038822205850}
   m_Layer: 0
   m_Name: basic_rig Pelvis
   m_TagString: Untagged
@@ -755,6 +973,19 @@ Transform:
   m_Father: {fileID: 4978815476161972070}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2935917038822205850
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975666617857746006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014, y: 0.005, z: 0.005}
+  m_Center: {x: -0.004, y: 0, z: 0}
 --- !u!1 &4975673575740370408
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,8 +1119,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4973756713017511878}
+  - component: {fileID: 8807649234850625347}
   m_Layer: 0
-  m_Name: basic_rig Head
+  m_Name: basic_rig Head RAG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -910,6 +1142,19 @@ Transform:
   m_Father: {fileID: 4979249625767688692}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8807649234850625347
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975712901406525260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.035, y: -0.03, z: 0.03}
+  m_Center: {x: -0.016, y: 0, z: 0}
 --- !u!1 &4975795378624537092
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,8 +1164,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4973770092686952850}
+  - component: {fileID: 344807340457751919}
+  - component: {fileID: 5343091038367689513}
   m_Layer: 0
-  m_Name: basic_rig R Calf
+  m_Name: basic_rig R Calf RAG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -941,6 +1188,35 @@ Transform:
   m_Father: {fileID: 4974076346623393018}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &344807340457751919
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975795378624537092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016, y: 0.005, z: 0.005}
+  m_Center: {x: -0.006, y: 0, z: 0}
+--- !u!54 &5343091038367689513
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975795378624537092}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4975832631367517084
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,8 +1226,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4979002918358536882}
+  - component: {fileID: 7766040047349373539}
+  - component: {fileID: 2958615811081169653}
   m_Layer: 0
-  m_Name: basic_rig L Forearm
+  m_Name: basic_rig L Forearm RAG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -972,6 +1250,35 @@ Transform:
   m_Father: {fileID: 4973888223068305712}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7766040047349373539
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975832631367517084}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.011, y: 0.005, z: 0.005}
+  m_Center: {x: -0.004, y: 0, z: 0}
+--- !u!54 &2958615811081169653
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975832631367517084}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4975874042779585580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,8 +1319,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4973879972682351114}
+  - component: {fileID: 8796316468051938329}
+  - component: {fileID: 6508775826668198561}
   m_Layer: 0
-  m_Name: basic_rig Spine1
+  m_Name: basic_rig Spine1 RAG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1036,6 +1345,35 @@ Transform:
   m_Father: {fileID: 4979254814185091264}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8796316468051938329
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975883885203682740}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014, y: 0.02, z: 0.02}
+  m_Center: {x: -0.004, y: 0, z: 0}
+--- !u!54 &6508775826668198561
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975883885203682740}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4975901721014336728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,8 +1524,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4978911328420958960}
+  - component: {fileID: 8514603854558593338}
+  - component: {fileID: 8520223998053704789}
   m_Layer: 0
-  m_Name: basic_rig L Thigh
+  m_Name: basic_rig L Thigh RAG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1208,6 +1548,35 @@ Transform:
   m_Father: {fileID: 4973667084955501928}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8514603854558593338
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4976011034361559614}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014, y: 0.005, z: 0.005}
+  m_Center: {x: -0.004, y: 0, z: 0}
+--- !u!54 &8520223998053704789
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4976011034361559614}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4976012010121647398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,8 +1679,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4973888223068305712}
+  - component: {fileID: 1558014281694432400}
+  - component: {fileID: 1370633486717748029}
   m_Layer: 0
-  m_Name: basic_rig L UpperArm
+  m_Name: basic_rig L UpperArm RAG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1332,6 +1703,35 @@ Transform:
   m_Father: {fileID: 4973795645567835384}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1558014281694432400
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4976172020326951784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.011, y: 0.005, z: 0.005}
+  m_Center: {x: -0.004, y: 0, z: 0}
+--- !u!54 &1370633486717748029
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4976172020326951784}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4976174589647622214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,7 +1831,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move_speed: 3
-  jumpForce: {x: 0, y: 150, z: 0}
 --- !u!1 &4976192697612690382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,6 +1901,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4979249625767688692}
+  - component: {fileID: 7430559688679967913}
   m_Layer: 0
   m_Name: basic_rig Neck
   m_TagString: Untagged
@@ -1524,3 +1924,16 @@ Transform:
   m_Father: {fileID: 4973879972682351114}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7430559688679967913
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4976353852803752494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014, y: 0.005, z: 0.005}
+  m_Center: {x: -0.004, y: 0, z: 0}

@@ -5,13 +5,13 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public bool lockCursor;
-    public float sensitivity = 10;
+    public float sensitivity = 20.0f;
     public Transform target, player;
 
     float pitch;
     float yaw;
 
-    public float rotationSmoothTime = .12f;
+    public float rotationSmoothTime = 0.14f;
     Vector3 rotationSmoothVelocity;
     public Vector3 currentRotation;
 
