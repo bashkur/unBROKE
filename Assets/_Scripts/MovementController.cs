@@ -6,15 +6,19 @@ public class MovementController : MonoBehaviour
 {
     [SerializeField]
     private float move_speed = 3.0f;
+    [SerializeField]
+    private Vector3 jumpForce;
 
-    private CharacterController controller = null;
+    private bool isGrounded;
+
+    //private CharacterController controller = null;
     private Animator animator = null;
     private Rigidbody rb = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        controller = GetComponent<CharacterController>();
+        isGrounded = true;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
@@ -22,7 +26,11 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            rb.AddForce(jumpForce);
+            isGrounded = false;
+        }
     }
 
     private void FixedUpdate()
@@ -31,5 +39,16 @@ public class MovementController : MonoBehaviour
         Vector3 vert = Input.GetAxis("Vertical") * this.transform.forward;
         Vector3 new_pos = (horiz + vert) * move_speed * Time.deltaTime;
         rb.MovePosition(transform.position + new_pos);
+
+        if (new_pos == Vector3.zero)
+            animator.SetBool("Running", false);
+        else
+            animator.SetBool("Running", true);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Floor")
+            isGrounded = true;
     }
 }
