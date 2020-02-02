@@ -61,6 +61,11 @@ public class BreakableObjectScript : MonoBehaviour
 
     }
 
+    public bool isDestroyed()
+    {
+        return isBroken;
+    }
+
     // Switching between the visual states of the object between together and broken.
     // This assumes the broken mesh is a child, and the fixed mesh is the mesh component of this
     private void switchStates()
