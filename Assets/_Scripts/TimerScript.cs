@@ -9,7 +9,7 @@ public class TimerScript : MonoBehaviour
     private bool StartTimer;
     private bool TimerDone;
 
-    private GameObject GUI;
+    private GameObject hud;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class TimerScript : MonoBehaviour
         StartTimer = true;
 
         // Get HUD in order to call functions there to set time
-        // GUI = GameObject.Find("GUI");
+        hud = GameObject.Find("HUD");
     }
 
     // Update is called once per frame
@@ -29,13 +29,24 @@ public class TimerScript : MonoBehaviour
         {
             timeInSeconds -= Time.deltaTime;
             /*
-            GUI.transform.GetChild(MIN_TEXT_CHILD).GetComponent<Text>().text = minLeft();
+            //GUI.transform.GetChild(MIN_TEXT_CHILD).GetComponent<Text>().text = minLeft();
 
-            GUI.transform.GetChild(SECONDS_TEXT_CHILD).GetComponent<Text>().text = secLeft();
+            //GUI.transform.GetChild(SECONDS_TEXT_CHILD).GetComponent<Text>().text = secLeft();
+
+            SEND MESSAGE TO HUD TO UPDATE TIME!
             */
             if (timeInSeconds <= 0)
             {
                 TimerDone = true;
+                // Check if whether or not there are more broken things in the house than non-broken
+                if(this.gameObject.GetComponent<autoBreak>().isMoreBroke())
+                {
+                    print("YOU LOST");
+                }
+                else
+                {
+                    print("YOU WON");
+                }
             }
         }
     }
