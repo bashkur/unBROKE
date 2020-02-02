@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
+    BreakableObjectScript broken;
     [SerializeField]
     private float move_speed = 3.0f;
     [SerializeField]
@@ -18,6 +19,7 @@ public class MovementController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         isGrounded = true;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
@@ -31,6 +33,7 @@ public class MovementController : MonoBehaviour
             rb.AddForce(jumpForce);
             isGrounded = false;
         }
+
     }
 
     private void FixedUpdate()
@@ -50,5 +53,25 @@ public class MovementController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Floor")
             isGrounded = true;
+        //gets game object scripts sees if it is destroyed then can heal!
+ 
+        if(collision.gameObject.tag=="Breakable")
+        {
+            print("HIT");
+            broken=collision.gameObject.GetComponent<BreakableObjectScript>();
+            if (broken.isDestroyed() == true)
+
+            {
+                if (Input.GetKeyDown("e"))
+                {
+                    broken.heal();
+                }
+                if(Input.GetKeyDown("r"))
+                {
+                    print(broken.maxHealth);
+                    broken.damage();
+                }
+             }
+        }
     }
 }
