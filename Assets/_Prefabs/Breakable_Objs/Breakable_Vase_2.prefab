@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2929724238597285484}
   - component: {fileID: -5246509313824031403}
   m_Layer: 0
-  m_Name: Vase_2
+  m_Name: Breakable_Vase_2
   m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
