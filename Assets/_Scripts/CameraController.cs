@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
     {
         yaw += Input.GetAxis("Mouse X") * sensitivity;
         pitch -= Input.GetAxis("Mouse Y") * sensitivity;
-        pitch = Mathf.Clamp(pitch, -40, 85);
+        pitch = Mathf.Clamp(pitch, -40, 65);
 
         transform.LookAt(target);
         target.rotation = Quaternion.Euler(pitch, yaw, 0);
