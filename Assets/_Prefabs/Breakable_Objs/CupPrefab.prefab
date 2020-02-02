@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6118406008587195320}
   m_Layer: 0
   m_Name: CupPrefab
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &3122591926068548331
 MonoBehaviour:
@@ -135,17 +135,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d83a577729ac7e94ab7473e4aa8a37da,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.308637
+      value: 5.9406
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d83a577729ac7e94ab7473e4aa8a37da,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.3399086
+      value: -0.013
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d83a577729ac7e94ab7473e4aa8a37da,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.0597091
+      value: 5.9526
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d83a577729ac7e94ab7473e4aa8a37da,
         type: 3}
@@ -190,17 +190,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d83a577729ac7e94ab7473e4aa8a37da,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.086299
+      value: 0.009523938
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d83a577729ac7e94ab7473e4aa8a37da,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.086299
+      value: 0.009523938
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d83a577729ac7e94ab7473e4aa8a37da,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.086299
+      value: 0.009523938
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: d83a577729ac7e94ab7473e4aa8a37da,
         type: 3}
