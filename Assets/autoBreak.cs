@@ -12,7 +12,7 @@ public class autoBreak : MonoBehaviour
         {
             int itterator = Random.Range(0, B_Objects.Length);
             BreakableObjectScript breakable= B_Objects[itterator].GetComponent<BreakableObjectScript>();
-            breakable.damage();
+            breakable.damage(); 
         }
     }
 
