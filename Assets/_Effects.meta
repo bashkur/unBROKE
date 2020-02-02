@@ -1,5 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< .mine
+guid: 3a2f082184874634fa7bd7f5096f7ca1
+||||||| .r34
+guid: 6e800943290a181478a641a7368cff4f
+=======
 guid: 0bedb28195c32ae48b221d0f632ef794
+>>>>>>> .r38
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
