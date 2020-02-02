@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour
 {
@@ -42,10 +43,13 @@ public class TimerScript : MonoBehaviour
                 if(this.gameObject.GetComponent<autoBreak>().isMoreBroke())
                 {
                     print("YOU LOST");
+                    //hud.transform.GetChild(2).GetComponent<Text>().text = "YOU LOST";
+                    SceneManager.LoadScene(0);
                 }
                 else
                 {
                     print("YOU WON");
+                    SceneManager.LoadScene(0);
                 }
             }
         }
