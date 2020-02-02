@@ -39,8 +39,6 @@ public class NpcController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(Vector3.Distance(transform.position, destination.position)); // OMIT
-
         // NPC reached target (and is not currently destroying one)
         if (!isDestroying && Vector3.Distance(destination.position, transform.position) < 0.5)
         {
@@ -57,7 +55,7 @@ public class NpcController : MonoBehaviour
                 isSearching = false;
                 isDestroying = true;
 
-                // BreakObject(); // break object NPC was "hunting"
+                BreakObject(); // break object NPC was "hunting"
                 print("Break object");
 
                 SetDestination(); // move to a room
@@ -86,8 +84,6 @@ public class NpcController : MonoBehaviour
 
             destination = rooms[randomRoom];
             roomIndex = randomRoom;
-
-            print(randomRoom);
         }
 
         agent.SetDestination(destination.position);
@@ -120,8 +116,9 @@ public class NpcController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        print("Trigger enter");
         // interactable item in range
-        if (other.tag == "Breakable")
+        if (other.gameObject.tag == "Breakable")
         {
             print("Detected object"); // OMIT
             BreakableObjectScript breakableObj = other.GetComponent<BreakableObjectScript>();
