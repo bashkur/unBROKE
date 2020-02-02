@@ -27,9 +27,9 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        yaw += Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-        pitch -= Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
-        pitch = Mathf.Clamp(pitch, -40, 75);
+        yaw += Input.GetAxis("Mouse X") * sensitivity;
+        pitch -= Input.GetAxis("Mouse Y") * sensitivity;
+        pitch = Mathf.Clamp(pitch, -40, 65);
 
         transform.LookAt(target);
         target.rotation = Quaternion.Euler(pitch, yaw, 0);

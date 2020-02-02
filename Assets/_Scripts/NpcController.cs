@@ -7,13 +7,23 @@ public class NpcController : MonoBehaviour
 {
     [SerializeField]
     Transform[] rooms;
+    [SerializeField]
     Transform destination;
+    int roomIndex = 0;
 
-    bool isSearching = true;
-    bool isHunting = false;
-    bool isBreaking = false;
+    [SerializeField]
+    bool isRoaming = true;
+    [SerializeField]
+    bool isSearching = false;
+    [SerializeField]
+    bool isDestroying = false;
+
+    [SerializeField]
+    int damageRate = 0; // damage to deal to object per second
 
     NavMeshAgent agent;
+
+    GameObject targetObject;
 
     // Start is called before the first frame update
     void Start()
@@ -29,36 +39,99 @@ public class NpcController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // NPC reached target (and is not currently destroying one)
+        if (!isDestroying && Vector3.Distance(destination.position, transform.position) < 0.5)
+        {
+            print("Reached target"); // OMIT
+
+            // roaming house
+            if (isRoaming)
+            {
+                SetDestination(); // continue roaming
+            }
+            // searching object to destroy (moving towards one)
+            else if (isSearching)
+            {
+                isSearching = false;
+                isDestroying = true;
+
+                BreakObject(); // break object NPC was "hunting"
+                print("Break object");
+
+                SetDestination(); // move to a room
+            }
+        }
     }
 
-    void SetDestination(Transform dest = null)
+    private void SetDestination(Transform dest = null)
     {
+        print("Set destination");
+
         // go to given position
         if (dest != null)
         {
             destination = dest;
-            agent.SetDestination(destination.position);
         }
         else
         {
             // choose random room to navigate to
-            destination = rooms[Random.Range(0, rooms.Length - 1)];
+            int randomRoom = 0;
+            do
+            {
+                randomRoom = Random.Range(0, rooms.Length - 1);
+            }
+            while (randomRoom == roomIndex);
+
+            destination = rooms[randomRoom];
+            roomIndex = randomRoom;
+        }
+
+        agent.SetDestination(destination.position);
+
+        print(destination.position);
+    }
+
+    private IEnumerator BreakObject()
+    {
+        // break object code
+        print("Start breaking object"); // OMIT
+
+        yield return StartCoroutine("BreakingObject");
+
+        isDestroying = false;
+        isRoaming = true;
+    }
+
+    private IEnumerator BreakingObject()
+    {
+        BreakableObjectScript breakObj = targetObject.GetComponent<BreakableObjectScript>();
+
+        while (!breakObj.isDestroyed())
+        {
+            breakObj.damage(damageRate);
+
+            yield return new WaitForSeconds(1);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        print("Trigger enter");
         // interactable item in range
-        if (other.tag == "Breakable")
+        if (other.gameObject.tag == "Breakable")
         {
+            print("Detected object"); // OMIT
+            BreakableObjectScript breakableObj = other.GetComponent<BreakableObjectScript>();
+
             // check if item is not yet broken
-            /*
-            if (!broken && isSearching) // FIXME
+            if (!breakableObj.isDestroyed() && isRoaming)
             {
-                // break item
+                print("Going to break object"); // OMIT
+                SetDestination(other.transform);
+
+                targetObject = other.gameObject;
+                isSearching = true;
             }
-            */
         }
     }
 }

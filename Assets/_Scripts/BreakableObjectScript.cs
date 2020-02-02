@@ -14,6 +14,8 @@ public class BreakableObjectScript : MonoBehaviour
     // Boolean for the state of the object
     private bool isBroken;
 
+    private GameObject gameStateManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,8 @@ public class BreakableObjectScript : MonoBehaviour
         isBroken = false;
         // Assumption object has broken mesh as 1st child of the object. Make sure it's off
         this.transform.GetChild(0).gameObject.SetActive(false);
+
+        gameStateManager = GameObject.Find("GameStateManager");
     }
 
     // Update is called once per frame
@@ -30,16 +34,22 @@ public class BreakableObjectScript : MonoBehaviour
     }
 
     // Public function players can call in order to damage the object, given an amount that defaults to 1
-    public void damage(int amount = 1)
+    public int damage(int amount = 1)
     {
         health -= amount;
         if(health <= 0)
         {
+            health = 0;
             isBroken = true;
             switchStates();
         }
+        return health;
     }
-
+    //getter for health
+    public int GetHealth()
+    {
+        return health;
+    }
     // Public function players can call in order to heal the object
     public void heal(int amount = 1)
     {
@@ -74,11 +84,13 @@ public class BreakableObjectScript : MonoBehaviour
         {
             this.transform.GetComponent<MeshRenderer>().enabled = false;
             this.transform.GetChild(0).gameObject.SetActive(true);
+            gameStateManager.gameObject.GetComponent<autoBreak>().addFixed();
         }
         else
         {
             this.transform.GetComponent<MeshRenderer>().enabled = true;
             this.transform.GetChild(0).gameObject.SetActive(false);
+            gameStateManager.gameObject.GetComponent<autoBreak>().addBroke();
         }
     }
 }
