@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class autoBreak : MonoBehaviour
 {
+    GameObject hud;
+
     private int numBroke;
     private int totalNum;
     // Start is called before the first frame update
@@ -23,6 +25,7 @@ public class autoBreak : MonoBehaviour
         }
 
         this.gameObject.GetComponent<TimerScript>().startTimer();
+        hud = GameObject.Find("HUD");
     }
 
     // Update is called once per frame
@@ -34,11 +37,13 @@ public class autoBreak : MonoBehaviour
     public void addBroke()
     {
         numBroke += 1;
+        hud.SendMessage("UpdateDamage", brokeRatio());
     }
 
     public void addFixed()
     {
         numBroke -= 1;
+        hud.SendMessage("UpdateDamage", brokeRatio());
     }
 
     public bool isMoreBroke()
