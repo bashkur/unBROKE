@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3969195219166967232}
   m_Layer: 0
   m_Name: Vase_2
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6853afc371f1e0e438c65db38956346d, type: 2}
+  - {fileID: 2100000, guid: 3f2150c889323c348bfc134e54a49718, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7470144899263148727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec78e41848b09af4ba06051f06c0aa97, type: 3}
+  m_Script: {fileID: 11500000, guid: 05b24aa6d9eaf094ab329f6ecdc73547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0

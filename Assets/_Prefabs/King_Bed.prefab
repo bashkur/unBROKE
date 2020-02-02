@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3936240512870521097}
   m_Layer: 0
   m_Name: King_Bed
-  m_TagString: Untagged
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: db2762384437b6148a5599d7430cf3ae, type: 2}
+  - {fileID: 2100000, guid: 84bb0eb26d857204297a9bd2c55796f3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 255565108716871457}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec78e41848b09af4ba06051f06c0aa97, type: 3}
+  m_Script: {fileID: 11500000, guid: 05b24aa6d9eaf094ab329f6ecdc73547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 0
