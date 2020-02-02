@@ -19,6 +19,8 @@ public class BreakableObjectScript : MonoBehaviour
     {
         health = maxHealth;
         isBroken = false;
+        // Assumption object has broken mesh as 1st child of the object. Make sure it's off
+        this.transform.GetChild(0).gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,11 +41,12 @@ public class BreakableObjectScript : MonoBehaviour
     }
 
     // Public function players can call in order to heal the object
-    public void heal(int amount = 0)
+    public void heal(int amount = 1)
     {
         if(health <= 0)
         {
             isBroken = false;
+            switchStates();
         }
         // Only heal if it needs healed
         if(health < maxHealth)
@@ -58,8 +61,24 @@ public class BreakableObjectScript : MonoBehaviour
 
     }
 
+    public bool isDestroyed()
+    {
+        return isBroken;
+    }
+
+    // Switching between the visual states of the object between together and broken.
+    // This assumes the broken mesh is a child, and the fixed mesh is the mesh component of this
     private void switchStates()
     {
-
+        if(isBroken)
+        {
+            this.transform.GetComponent<MeshRenderer>().enabled = false;
+            this.transform.GetChild(0).gameObject.SetActive(true);
+        }
+        else
+        {
+            this.transform.GetComponent<MeshRenderer>().enabled = true;
+            this.transform.GetChild(0).gameObject.SetActive(false);
+        }
     }
 }
