@@ -6,24 +6,20 @@ using UnityEngine.AI;
 public class NpcController : MonoBehaviour
 {
     [SerializeField]
-    Transform[] rooms;
+    Transform[] breakableObjects;
     [SerializeField]
-    Transform destination;
-    int roomIndex = 0;
+    Transform target;
 
-    [SerializeField]
-    bool isRoaming = true;
-    [SerializeField]
-    bool isSearching = false;
-    [SerializeField]
-    bool isDestroying = false;
+    int lastTarget = 0;
+
+    GameObject gameObj;
+
+    bool isDestroying;
 
     [SerializeField]
     int damageRate = 0; // damage to deal to object per second
 
     NavMeshAgent agent;
-
-    GameObject targetObject;
 
     // Start is called before the first frame update
     void Start()
@@ -34,103 +30,74 @@ public class NpcController : MonoBehaviour
         {
             SetDestination();
         }
+        isDestroying = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // NPC reached target (and is not currently destroying one)
-        if (!isDestroying && Vector3.Distance(destination.position, transform.position) < 0.5)
-        {
-            print("Reached target"); // OMIT
-
-            // roaming house
-            if (isRoaming)
-            {
-                SetDestination(); // continue roaming
-            }
-            // searching object to destroy (moving towards one)
-            else if (isSearching)
-            {
-                isSearching = false;
-                isDestroying = true;
-
-                BreakObject(); // break object NPC was "hunting"
-                print("Break object");
-
-                SetDestination(); // move to a room
-            }
-        }
     }
 
     private void SetDestination(Transform dest = null)
     {
-        print("Set destination");
+        print("Set Destination"); // OMIT
 
-        // go to given position
-        if (dest != null)
+        // pick random, unbroken object
+        int randomObj;
+        do
         {
-            destination = dest;
+            randomObj = Random.Range(0, breakableObjects.Length);
         }
-        else
-        {
-            // choose random room to navigate to
-            int randomRoom = 0;
-            do
-            {
-                randomRoom = Random.Range(0, rooms.Length - 1);
-            }
-            while (randomRoom == roomIndex);
+        while (randomObj == lastTarget);
 
-            destination = rooms[randomRoom];
-            roomIndex = randomRoom;
-        }
-
-        agent.SetDestination(destination.position);
-
-        print(destination.position);
+        target = breakableObjects[randomObj];
+        lastTarget = randomObj;
+        agent.SetDestination(target.position);
     }
 
-    private IEnumerator BreakObject()
+    IEnumerator BreakObject()
     {
         // break object code
         print("Start breaking object"); // OMIT
 
-        yield return StartCoroutine("BreakingObject");
+        BreakableObjectScript breakObj = gameObj.GetComponent<BreakableObjectScript>();
+        if (!breakObj.isDestroyed())
+        {
+            yield return StartCoroutine("BreakingObject");
+        }
 
         isDestroying = false;
-        isRoaming = true;
+
+        SetDestination();
     }
 
-    private IEnumerator BreakingObject()
+    IEnumerator BreakingObject()
     {
-        BreakableObjectScript breakObj = targetObject.GetComponent<BreakableObjectScript>();
+        BreakableObjectScript breakObj = gameObj.GetComponent<BreakableObjectScript>();
 
         while (!breakObj.isDestroyed())
         {
             breakObj.damage(damageRate);
+            print("Hit"); // OMIT
 
             yield return new WaitForSeconds(1);
         }
+        print("Destroyed"); // OMIT
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Trigger enter");
         // interactable item in range
-        if (other.gameObject.tag == "Breakable")
+        if (!isDestroying && other.gameObject.tag == "Breakable")
         {
-            print("Detected object"); // OMIT
-            BreakableObjectScript breakableObj = other.GetComponent<BreakableObjectScript>();
-
-            // check if item is not yet broken
-            if (!breakableObj.isDestroyed() && isRoaming)
+            if (gameObj == null || other.gameObject != gameObj)
             {
-                print("Going to break object"); // OMIT
-                SetDestination(other.transform);
+                isDestroying = true;
+                gameObj = other.gameObject;
 
-                targetObject = other.gameObject;
-                isSearching = true;
+                print("Detected object"); // OMIT
+
+                StartCoroutine("BreakObject");
             }
         }
     }
