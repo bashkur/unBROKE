@@ -26,7 +26,7 @@ public class TimerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(TimerDone && StartTimer)
+        if(!TimerDone && StartTimer)
         {
             timeInSeconds -= Time.deltaTime;
             /*

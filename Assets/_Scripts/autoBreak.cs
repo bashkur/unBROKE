@@ -18,14 +18,14 @@ public class autoBreak : MonoBehaviour
         int numToBreak = 3;
         for(int i = 0; i<numToBreak; i++)
         {
-            int itterator = Random.Range(0, B_Objects.Length);
+            int itterator = Random.Range(0, B_Objects.Length - 1);
             BreakableObjectScript breakable= B_Objects[itterator].GetComponent<BreakableObjectScript>();
             breakable.damage();
             addBroke();
         }
 
         this.gameObject.GetComponent<TimerScript>().startTimer();
-        hud = GameObject.Find("HUD");
+        //hud = GameObject.Find("HUD");
     }
 
     // Update is called once per frame
