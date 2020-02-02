@@ -5,13 +5,13 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public bool lockCursor;
-    public float sensitivity = 10;
+    public float sensitivity = 20.0f;
     public Transform target, player;
 
     float pitch;
     float yaw;
 
-    public float rotationSmoothTime = .12f;
+    public float rotationSmoothTime = 0.14f;
     Vector3 rotationSmoothVelocity;
     public Vector3 currentRotation;
 
@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
     {
         yaw += Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         pitch -= Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
-        pitch = Mathf.Clamp(pitch, -40, 85);
+        pitch = Mathf.Clamp(pitch, -40, 75);
 
         transform.LookAt(target);
         target.rotation = Quaternion.Euler(pitch, yaw, 0);
