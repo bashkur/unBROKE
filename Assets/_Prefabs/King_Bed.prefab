@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 443265011852474843}
   - component: {fileID: 6424808621233932727}
   - component: {fileID: 4408080921989300005}
-  - component: {fileID: 3936240512870521097}
   m_Layer: 0
   m_Name: King_Bed
-  m_TagString: Breakable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,16 +79,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3936240512870521097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255565108716871457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b24aa6d9eaf094ab329f6ecdc73547, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 0
