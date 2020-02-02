@@ -14,10 +14,10 @@ public class BreakableObjectScript : MonoBehaviour
     // Boolean for the state of the object
     private bool isBroken;
 
-    private GameObject gameStateManager;
+    public GameObject gameStateManager;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         health = maxHealth;
         isBroken = false;
