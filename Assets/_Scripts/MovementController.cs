@@ -19,7 +19,6 @@ public class MovementController : MonoBehaviour
     void Start()
     {
         isGrounded = true;
-        //controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
@@ -29,7 +28,6 @@ public class MovementController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            print("jump");
             rb.AddForce(jumpForce);
             isGrounded = false;
         }
@@ -37,8 +35,6 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //animator.SetBool("Grounded", isGrounded);
-
         Vector3 horiz = Input.GetAxis("Horizontal") * this.transform.right;
         Vector3 vert = Input.GetAxis("Vertical") * this.transform.forward;
         Vector3 new_pos = (horiz + vert) * move_speed * Time.deltaTime;
@@ -48,16 +44,11 @@ public class MovementController : MonoBehaviour
             animator.SetBool("Running", false);
         else
             animator.SetBool("Running", true);
-
-        //print(isGrounded);
-
-
-
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Floor")
             isGrounded = true;
     }
 }

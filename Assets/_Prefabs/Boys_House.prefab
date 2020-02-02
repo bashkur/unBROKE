@@ -4113,7 +4113,7 @@ GameObject:
   - component: {fileID: 8515395682118470885}
   m_Layer: 0
   m_Name: Floor1
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -4207,7 +4207,7 @@ GameObject:
   - component: {fileID: 8515395682733976089}
   m_Layer: 0
   m_Name: Stairs
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -4301,7 +4301,7 @@ GameObject:
   - component: {fileID: 8515395682761890547}
   m_Layer: 0
   m_Name: Floor2a
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -4395,7 +4395,7 @@ GameObject:
   - component: {fileID: 8515395682798705759}
   m_Layer: 0
   m_Name: Floor2b
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -4489,7 +4489,7 @@ GameObject:
   - component: {fileID: 8515395682816950041}
   m_Layer: 0
   m_Name: Floor2c
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -4583,7 +4583,7 @@ GameObject:
   - component: {fileID: 8515395683378225144}
   m_Layer: 0
   m_Name: Floor2d
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
