@@ -41,7 +41,7 @@ public class BreakableObjectScript : MonoBehaviour
     }
 
     // Public function players can call in order to heal the object
-    public void heal(int amount = 0)
+    public void heal(int amount = 1)
     {
         if(health <= 0)
         {
