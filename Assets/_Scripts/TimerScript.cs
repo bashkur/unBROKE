@@ -57,10 +57,10 @@ public class TimerScript : MonoBehaviour
     }
 
     // Public Function to Set Timer in Minutes, the Options menu need to call on this and it will save the minutes across scenes
-    public void setTimer(int minutes)
+    public void setTimer(float minutes)
     {
-        PlayerPrefs.SetInt("TimerMinutes", minutes);
-        timeTotalMinutes = minutes;
+        PlayerPrefs.SetInt("TimerMinutes", (int)minutes);
+        timeTotalMinutes = (int)minutes;
 
     }
 
