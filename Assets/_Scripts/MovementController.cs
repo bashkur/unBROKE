@@ -9,7 +9,7 @@ public class MovementController : MonoBehaviour
     private float move_speed = 3.0f;
     [SerializeField]
     private Vector3 jumpForce;
-
+   
     private bool isGrounded;
 
     //private CharacterController controller = null;
@@ -47,6 +47,21 @@ public class MovementController : MonoBehaviour
             animator.SetBool("Running", false);
         else
             animator.SetBool("Running", true);
+        if(broken!=null)
+        {
+            if (broken.isDestroyed() == true)
+
+            {
+
+                if (Input.GetKeyDown("e"))
+                {
+                    broken.heal();
+                    print(broken.GetHealth());
+                }
+
+            }
+            
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -56,22 +71,15 @@ public class MovementController : MonoBehaviour
         //gets game object scripts sees if it is destroyed then can heal!
  
         if(collision.gameObject.tag=="Breakable")
+        {  
+            broken =collision.gameObject.GetComponent<BreakableObjectScript>();
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.tag=="Breakable")
         {
-            print("HIT");
-            broken=collision.gameObject.GetComponent<BreakableObjectScript>();
-            if (broken.isDestroyed() == true)
-
-            {
-                if (Input.GetKeyDown("e"))
-                {
-                    broken.heal();
-                }
-                if(Input.GetKeyDown("r"))
-                {
-                    print(broken.maxHealth);
-                    broken.damage();
-                }
-             }
+            broken = null;
         }
     }
 }
